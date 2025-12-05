@@ -50,6 +50,11 @@ public class AlphabetManager : MonoBehaviour
     
     void UpdateLetterDisplay()
     {
+        LetterZoom zoomScript = letterText.GetComponent<LetterZoom>();
+        if (zoomScript != null)
+        {
+            zoomScript.PlayClickZoom(); // ← Click zoom + idle auto resume!
+        }
         letterText.text = alphabet[currentLetterIndex].ToString();
         Debug.Log("Sekarang: " + letterText.text);
     }
